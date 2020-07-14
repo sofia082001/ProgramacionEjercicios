@@ -10,29 +10,29 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //ingrese los datos conocidos
-            Console.WriteLine("Ingtrese y:");
-            double y = double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingtrese t:");
+            double t = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Ingtrese z:");
-            double z = double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingtrese a en grados:");
+            double a = double.Parse(Console.ReadLine());
 
-            //calculo la hipotenusa
-            double t = (y * y) + (z * z);
-            double h = Math.Sqrt(t);
-            Console.WriteLine("La hipotenusa es:" + h);
+            //paso de grados a radianes por que o si no me da negativo
+            double zrad = a * (Math.PI / 180);
 
-            //Math.Asin (valor) me lo calcula en radianes ojo pasarlo primero a grados
-            double c = Math.Asin(z / h);
+            //calculo el lado z
+            double z = Math.Cos(zrad) * t;
+            Console.WriteLine("El valor de z es:" + z);
+
+            //ya con z calculo y (ca:cateto)
+            double ca = (t * t) - (z * z);
+            double y = Math.Sqrt(ca);
+            Console.WriteLine("El valor de y es:" + y);
+
+            //hayo el angulo c, paso de radianes a grados
+            double c = Math.Acos(y / t);
             double cgrados = c * (180 / Math.PI);
-            double a = Math.Asin(y / h);
-            double agrados = a * (180 / Math.PI);
-
-            Console.WriteLine("Los valores de a en radianes es:" + a);
-            Console.WriteLine("Los valores de a en grados es:" + agrados);
-            Console.WriteLine("Los valores de c en radianes es:" + c);
-            Console.WriteLine("Los valores de c en grados es:" + cgrados);
-
+            Console.WriteLine("El valor de c es:" + cgrados);
+            
         }
     }
 }
