@@ -35,7 +35,7 @@ namespace IMC
             {
                 Console.WriteLine("Su peso es superior a lo normal, tiene sobrepeso! ");
             }
-            else if (imc > 30.0)
+            else (imc > 30.0)
             { Console.WriteLine("Sufre obesidad, por favor deje de tragar!"); }
 
             }
