@@ -21,20 +21,20 @@ namespace EcuacionCuadratica
             float c = float.Parse(Console.ReadLine());
 
             //Realizo la opercion del discriminante
-            double dis = Math.Sqrt(b * b - 4 * a * c);
+            double dis = (b * b - 4 * a * c);
 
             //Primera condicion= Si el discriminante es mayo a cero se realiza la operacion 
             if (dis > 0)
             {
-                double x1 = (-b + dis) / 2 * a;
-                double x2 = (-b - dis) / 2 * a;
+                double x1 = (-b + Math.sqrt (dis)) / (2 * a);
+                double x2 = (-b - Math.sqrt (dis)) / (2 * a);
                 Console.WriteLine("Los valores de x1:" + x1);
                 Console.WriteLine("Los valores de x2:" + x2);
             }
             //Si no se cumple con el primer parametro entonces llega al segundo y realiza la operacion 
             else if (dis == 0)
             {
-                double x = (-b + dis) / 2 * a;
+                double x = (-b + Math.sqrt (dis)) / (2 * a);
                 Console.WriteLine("La ecuacion tiene una unica solucion:");
             }
             //si no se cumple ni con el primero ni con el segundo quiere decir que no tiene solucion 
