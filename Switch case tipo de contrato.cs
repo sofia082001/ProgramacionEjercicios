@@ -56,7 +56,8 @@ namespace Switch_case
                         default: riesgo = 0.0696; break;                        
                     }
 
-                    arl *= riesgo;
+                    base_cotizacion *= riesgo;
+                    arl = base_cotizacion;
                     prima = 0;
                     break;
 
