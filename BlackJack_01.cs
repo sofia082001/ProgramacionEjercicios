@@ -19,8 +19,7 @@ namespace BlackJack1
             int i = 0;
             
             Console.WriteLine("| Bienvenido al juego |");
-            //Console.WriteLine("Jugador");
-
+            
             while (total1 < 21 && respuesta == "s" && i < 11)
             {
                 if (primerTurno)
@@ -40,7 +39,6 @@ namespace BlackJack1
                     Console.WriteLine("Total: " + total1);
                 }
                                
-
                 if (total1 < 21)
                 {
                     Console.Write("| ¿Desea continuar con otra carta? | (s/n): ");
