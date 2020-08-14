@@ -38,10 +38,10 @@ namespace Clase_dados
 
                 if (continuar == "s" && especiales == true) // esta condicion es para validar los dados especiales
                 {
-                    dadoB = aleatorio.Next(1, 12);
+                    dadoB = aleatorio.Next(1, 13);
                     Console.Write("Dado B: " + dadoB);
 
-                    dadoC = aleatorio.Next(1, 12);
+                    dadoC = aleatorio.Next(1, 13);
                     Console.Write(" | Dado C: " + dadoC);
 
                     puntos = dadoB + dadoC;
@@ -62,7 +62,7 @@ namespace Clase_dados
                     {
                         vida++;
                         if (vida >= 3) vida = 3;
-                        Console.WriteLine("Obtuvo dos seis consecutivos, recupera una vida: " + acumulavida);
+                        Console.WriteLine("Obtuvo dos seis consecutivos, recupera una vida: " + vida);
                         acumulavida = 0; // se inicializa la vida en cero para que se vuelve a contar cada vez que saque dos seis seguidos
                         dadoC = 0;
                         dadoB = 0; //con esto evitamos que no se meta en la condicion de abajo 
@@ -116,7 +116,7 @@ namespace Clase_dados
                      
                     if (acumulavida >=2)
                     {
-                        Console.WriteLine("Obtuvo dos seis consecutivos, recupera una vida: " + acumulavida);
+                        Console.WriteLine("Obtuvo dos seis consecutivos, recupera una vida: " + vida);
                         vida++;
                         if (vida >= 3) vida = 3; // la vida no puede ser mayor a tres debe ser igual a tres
                         acumulavida = 0;
