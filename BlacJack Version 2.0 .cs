@@ -27,7 +27,7 @@ namespace Black_Jack_Multiplayer
            
 
             Console.WriteLine("| Bienvenido al juego |");
-            Console.WriteLine("Numero de jugadores: ");
+            Console.WriteLine("Numero de jugadores min 2 y max 5: ");
             jugadores = int.Parse(Console.ReadLine());
 
             while (jugadores < 2 || jugadores > 5) //para obligar a los jugadores a responder 
