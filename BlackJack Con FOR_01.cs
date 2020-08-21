@@ -126,40 +126,26 @@ namespace Black_Jack_Multiplayer
                 }
                 
             }
-            for (int i = 0; i < jugadores; i++)
-
+         
+           if (puntaje[turnos] == 21)
             {
-                Console.WriteLine("Nombre: " + nombres[i] + " | " + "puntaje: " + puntaje[i]);
+                Console.WriteLine("El ganador es: " + nombres[turnos]);
             }
 
-
-            for (int i = 0; i < jugadores ; i++)
-            {
-                diferencia = Math.Abs(puntaje[turnos] - 21); //aqui resto 21 al puntaje total de cada turno para obtener el valor mas pequeno 
-                
-
-                if (diferencia < min) //si la resta es menor al minimo, con este se calcula la estatura mas cercana al promedio
-                {
-                    min = diferencia; //el minimos se vuelve la resta entre el puntaje y 21
-                    eLMasCercanoA21 = puntaje[turnos]; //el mas cercano es 
-                    elNombreCercano = nombres[turnos];
-
-                }                
-            }
-
-            Console.WriteLine("El ganador es: " + elNombreCercano);
-
-
-            if (nadieGana == jugadores) // esto quiere decir que si todos sacaron mas de 21 nadie gana (si el contador de los que sacaron > 21 es igual al numero de jugadores quiere decir que nadie gana) 
-            {
-                Console.WriteLine("Nadie gano >:(");
-            }
             else if (empate >= 2) // si el acumulador de empate es igual o mayor a dos existieron dos o mas personas ganadoras 
             {
                 Console.WriteLine("Hubo empate :o ");
             }
 
-            
+            else
+            {
+                Console.WriteLine("\n El ganador es: " + nombres[0] + " " + puntaje[0] + "\n El segundo puesto: " + nombres[0] + " " + puntaje[1]); //como arregle de forma menor puntaje a mayor puntaje el ganador es el que tenga menor puntaje
+            }
+
+            for (int i = 0; i < jugadores; i++)
+            { 
+            Console.WriteLine("Nombre: " + nombres[i] + " | " + "puntaje: " + puntaje[i]);
+            }            
         }
     }
 }
